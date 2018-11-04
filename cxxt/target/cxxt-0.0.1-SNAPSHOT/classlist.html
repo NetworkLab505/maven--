@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课程管理</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script src="js/editclass.js"></script>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="js/addclass.js"></script>
+    <script src="js/addclassvalidate.js"></script>
+<!--   <script src="js/login_register.js"></script>-->
+    <script >
+        $("#username").validatebox({
+            required:true,
+            missingMessage:'请输入用户名'
+        });
+        $('#password').validatebox({
+            required:true,
+            missingMessage:'请输入密码',
+            maxlength:'12',
+        })
+    </script>
+</head>
+<body>
+<div id="login_id" title="管理员登录"  >
+<form id="loginInput" method="post">
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th align="right">用户名</th>
+            <td><input type="text" class="form-control" name="username"></td>
+        </tr>
+        <tr>
+            <th align="left">密码</th><td><input type="password" class="form-control" name="password"/> </td>
+        </tr>
+    </table>
+</form>
+</div>
+<div id="register_id" title="管理员注册" modal="true"  closable="false" style="display: none;">
+    <form id="registerInput" method="post">
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th align="right">用户名</th>
+                <td><input type="text" class="form-control" name="username" id="username"></td>
+            </tr>
+            <tr>
+                <th align="left">密码</th><td><input type="password" class="form-control" name="password" id="password" /> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div style="padding:20px;" id="app">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title form-inline">
+               	 课程管理
+                <span>/</span>
+                <span type="button"  onclick="$('#adclass').window('open')" style="background-color: #337AB7;cursor: pointer">添加课程</span>
+
+                <input type="text" name="key" value="" class="form-control" id="key" onkeydown="onSearch(this)" placeholder="按学习方向search">
+            </h3>
+        </div>
+        <div class='table-cont' id="table-cont">
+            <table class="table table-bordered table-striped text-center" id='table'>
+                <thead>
+                    <tr >
+                        <th>ID</th>
+                        <th>学习方向</th>
+                        <th>等级</th>
+                        <th>课程名</th>
+                        <th>主讲人</th>
+                        <th>点击次数</th>
+                        <th>上传时间</th>
+                        <th colspan="2">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="easyui-pagination" fit="true" border="true" data-options="total:100" style="margin-top: -10px"></div>
+    </div>
+</div>
+<!--编辑表单-->
+<div id="w"  class="easyui-window" title="编辑" modal="true"  closed="true" data-options="iconCls:'icon-edit'" style="width:400px;">
+<form>
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Id</th>
+            <td><input type="text" name="" class="form-control" id="Id" /></td>
+        </tr>
+        <tr>
+            <th>学习方向</th>
+            <td><input type="text" name="" class="form-control" id="Learning_direction" /></td>
+        </tr>
+        <tr>
+            <th>等级</th>
+            <td><input type="text" name="" class="form-control" id="Grade" /></td>
+        </tr>
+        <tr>
+            <th>课程名</th>
+            <td><input type="text" name="" class="form-control" id="Course_name" /></td>
+        </tr>
+        <tr>
+            <th>主讲人</th>
+            <td><input type="text" name="" class="form-control" id="Keynote_speaker" /></td>
+        </tr>
+        <tr>
+            <th>点击次数</th>
+            <td><input type="text" name="" class="form-control" id="Clicks" /></td>
+        </tr>
+        <tr>
+            <th>上传时间</th>
+            <td><input type="date" name="" class="form-control" id="Uploadtime" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="reset" value="取消" class="btn btn-primary" id="reset" onclick="$('#w').window('close')" />
+                <input type="button" value="保存" class="btn btn-info" id="save"  onclick="$('#w').window('close');update()" />
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<script type="text/javascript">
+    //将数据以表格形式显示
+    $(function(){
+        $.getJSON('./json/classlist.json',function(response, status, xhr) {
+            var table = document.getElementById("table");
+            for(var i=0;i<response.length;i++) {
+                var row = table.insertRow(table.rows.length);
+                var c1 = row.insertCell(0);
+                c1.innerHTML = response[i].Id;
+                var c2 = row.insertCell(1);
+                c2.innerHTML = response[i].Learning_direction;
+                var c3 = row.insertCell(2);
+                c3.innerHTML = response[i].Grade;
+                var c4 = row.insertCell(3);
+                c4.innerHTML = response[i].Course_name;
+                var c5 = row.insertCell(4);
+                c5.innerHTML = response[i].Keynote_speaker;
+                var c6 = row.insertCell(5);
+                c6.innerHTML = response[i].Clicks;
+                var c7 = row.insertCell(6);
+                c7.innerHTML = response[i].Uploadtime;
+                var c8 = row.insertCell(7);
+                c8.innerHTML = '<button class="btn btn-link" onclick="del(this)">删除</button>';
+                var c9 = row.insertCell(8);
+                c9.innerHTML = '<button class="btn btn-link" onclick="$(\'#w\').window(\'open\'); modify(this) ">编辑</button>';
+            }
+        })
+    });
+</script>
+<!--上传课程-->
+<div id="adclass"  class="easyui-window" title="添加课程" modal="true"  closed="true" data-options="iconCls:'icon-edit'" style="width:400px;">
+    <div id="addClass_div">
+        <form   id="addClass"  onsubmit="return submitclass()">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <td><input type="text"  class="form-control" name="classID" id="classID" required="required" />
+                    &nbsp;&nbsp;<span id="IDspan"></span></td>
+                </tr>
+                <tr>
+                    <th>学习方向</th>
+                    <td>
+                        <select id="direction" name="direction">
+                        <option name="direction" >网络前端</option>
+                        <option name="direction" >网络后端</option>
+                        <option name="direction" >嵌入式</option>
+                        <option name="direction" >电源</option>
+                        <option name="direction" >工控</option>
+                        <option name="direction" >移动 </option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>课程等级</th>
+                    <td>
+                        <select id="grade1" name="grade">
+                        <option name="grade">初级</option>
+                        <option name="grade">中级</option>
+                        <option name="grade">高级</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>课程名称</th>
+                    <td><input type="text"  class="form-control" name="classname" id="classname" />
+                        &nbsp;&nbsp;<span id="classspan"></span></td>
+                </tr>
+                <tr>
+                    <th>主讲人</th>
+                    <td><input type="text"  class="form-control" name="speaker" id="speaker" />
+                        &nbsp;&nbsp;<span id="speakspan"></span></td>
+                </tr>
+                <tr>
+                    <th>点击次数</th>
+                    <td><input type="text"  class="form-control" name="clicknum" id="clicknum" /></td>
+                </tr>
+                <tr>
+                    <th>上传时间</th>
+                    <td><input type="date"  class="form-control " name="datepicker" id="datepicker" />
+                </tr>
+
+            </table>
+            <button  type="button"   class="button" id="add_btn" style="margin-left: 278px; background-color: #00a0e9" onclick="CheckClass()"  >添加课程</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

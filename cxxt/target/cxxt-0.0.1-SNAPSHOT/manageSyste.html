@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>后台管理页面</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="css/chartist-custom.css">
+    <script rel="stylesheet" href="./js/jquery-1.11.3.min.js"></script>+
+
+    <link type="text/stylesheet" href="css/bootstrap/bootstrap.min.css ">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!--用来添加一些标识-->
+    <link href="css/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style/style.css">
+    <link rel="stylesheet" href="./css/style/style1.css">
+    <!--更改插件里边的样式-->
+    <link rel="stylesheet" href="css/head1.css">
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+</head>
+<body style="color: #2b333e;">
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="brand">
+            <a href=""><img src="./img/logo2.png"  alt="logo图片" class="img-responsive logo"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-btn">
+                <button type="button" class="btn-toggle-fullwidth">
+                    <i class="lnr lnr-arrow-left-circle"></i>
+                </button>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-tasks" title="可实现的功能，可进行点击"></i>
+                        <span class="badge bg-danger" id="number1" style=" background-color: #F9354C !important;"><!--5--></span>
+
+
+                        <ul class="dropdown-menu notifications">
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>系统空间是足够的</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>你有&nbsp;&nbsp;<span id="number2"><!--5--></span>&nbsp;&nbsp;个未完成的任务</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+                            <li><a href="#" class="more">See all notifications</a></li>
+                        </ul>
+                    </a>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-envelope-alt" title="信封，可进行点击"></i>
+                        <span class="badge bg-danger" id="number3"><!--5--></span>
+                        <ul class="dropdown-menu notifications">
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>系统空间是足够的</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>你有&nbsp;&nbsp;<span id="number4"><!--5--></span>&nbsp;&nbsp;个未完成的任务</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+                            <li><a href="#" class="more">See all notifications</a></li>
+                        </ul>
+                    </a>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-bell-alt" title="提示，可进行点击"></i>
+                        <span class="badge bg-danger" id="number5"><!--5--></span>
+                        <ul class="dropdown-menu notifications">
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>系统空间是足够的</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>你有&nbsp;&nbsp;<span id="number6"><!--5--></span>&nbsp;&nbsp;个未完成的任务</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+                            <li><a href="#" class="more">See all notifications</a></li>
+                        </ul>
+                    </a>
+
+                </div>
+            </form>
+            <div id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown" title="可实现的功能，可进行点击">
+                            <i class="icon-headphones"></i>
+                            <span class="badge bg-danger" id="number7"><!--5--></span>
+                        </a>
+                        <ul class="dropdown-menu notifications rightdropdown-menu1">
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have&nbsp;&nbsp;<span id="number8"> <!--9--> </span>&nbsp;&nbsp;unfinished tasks</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+                            <li><a href="#" class="more">See all notifications</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="可实现的功能，可进行点击">
+                            <i class="lnr lnr-question-circle">
+                            </i>
+                            <span id="span_id" >Help</span>
+                            <i class="caret">
+
+                            </i>
+                        </a>
+                        <ul class="dropdown-menu rightdropdown-menu2">
+                            <li><a href="#">Basic Use</a></li>
+                            <li><a href="#">Working With Data</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Troubleshooting</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                       <!-- lnr lnr-chevron-down-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"  title="可实现的功能，可进行点击"><img src="img/avatar1_small.png" class="img-circle" alt="picture"> <span></span> <i class="caret "></i></a>
+                        <ul class="dropdown-menu rightdropdown-menu2">
+                            <li><a href="#"><i class="inr icon-user"></i> <span>注册</span></a></li>
+                            <li><a href="demo_login.html"><i class="lnr icon-user"></i> <span >登录</span></a></li>
+                            <li><a href="#"><i class="lnr icon-bell-alt" style="color: #676a6d;"></i> <span>退出登录</span></a></li>
+                           <!-- lnr-alarm-->
+                            <!--<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll2">
+            <nav>
+                <ul class="nav" style="cursor: pointer">
+                    <li class="sub-menu active left">
+                        <!--class="active"-->
+                        <a id="click1"><i class="lnr lnr-home"></i> <span class="left_menu">管理员管理</span>
+                            <span class="caret "></span><!--arrow-->
+                        </a>
+                    </li>
+                    <!--href="1.html"-->
+                    <li><a  id="click2" ><i class="lnr lnr-code" style="color: white; font-size: 21px !important;"></i> <span class="left_menu">课程管理</span></a></li>
+                    <li><a  id="click3"><i class="lnr lnr-chart-bars"></i> <span class="left_menu">图片管理</span></a></li>
+                    <li><a  id="click4"><i class="lnr lnr-cog"></i> <span class="left_menu">视频管理</span></a></li>
+                    <li><a  id="click5"><i class="lnr icon-user" style="color: white; font-size: 21px !important;"></i> <span class="left_menu">用户管理</span></a></li>
+                </ul>
+            </nav>
+        </div>userlist.html
+    </div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid content-right" >
+
+                <div id="aa"></div>
+
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+<!--    <div class="clearfix"></div>-->
+    <footer>
+        <div class="container-fluid">
+            <p class="copyright">Copyright &copy; 2018.no copy  <a href="http://yun.itheima.com/course" target="_blank" title="创新实验室">创新实验室</a> - Collect from <a href="http://yun.itheima.com/course" title="创新实验室" target="_blank">创新实验室</a></p>
+
+        </div>
+    </footer>
+    <!-- Javascript -->
+    <script src="./js/jquery.min.js"></script>
+    <!--点击按钮，显示下拉菜单-->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/klorofil-common.js"></script>
+    <script src="./js/head1.js"></script>
+    <script src="./js/head1data.js"></script>
+</div>
+</body>
+</html>

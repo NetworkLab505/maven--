@@ -1,0 +1,149 @@
+
+
+#logo{
+    height:49px;
+    background-color: #add8e6;
+}
+
+#regist{
+    margin-top: 23px;
+    margin-left:407px;
+    margin-bottom:20px;
+    border:2px solid #31b0d5;
+    width:509px;
+    height:640px;
+
+}
+#top-one{
+    border-bottom-style:dotted;
+    border-bottom-color:#31b0d5;
+    height:72px;
+}
+
+.image{
+    width:62px;
+    height:61px;
+}
+#m1,#m2,#m3{
+    float:right;
+    width:206px;
+    margin-top: -49px;
+}
+#m0{
+    margin-top:30px;
+    width:243px;
+}
+#top-three{
+    height:600px;
+}
+label{
+    background-color: transparent;
+    margin-top: 20px;
+    width:80px;
+    height:30px;
+    border: 1px solid green;
+ }
+#userrole{
+    width:271px;
+    height:33px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 11px;
+}
+#repassword{
+    width:271px;
+    height:33px;
+   text-align: center;
+    margin-top:31px;
+    margin-left: 11px;
+
+
+}
+#username{
+    width:271px;
+    height:33px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 15px;
+
+}
+#password{
+    width:271px;
+    height:33px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 13px;
+
+}
+#validate{
+    width:87px;
+    height:35px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 14px;
+
+}
+#mail{
+    width:271px;
+    height:33px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 9px;
+
+}
+#telephone{
+    width:271px;
+    height:33px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 14px;
+
+}
+#vbtn{
+    height:33px;
+    text-align: center;
+    background-color: greenyellow;
+    margin-top:31px;
+    margin-left: 33px;
+
+}
+#btn{
+    width:422px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 33px;
+    background-color:#2aabd2
+}
+:-ms-input-placeholder
+{
+    color: black;
+}
+::-webkit-input-placeholder{
+    color:black;
+}
+:-moz-placeholder{
+    color:black;
+}
+::-moz-placeholder{
+    color:black;
+}
+#footer{
+    text-align: center;
+    width:100%;
+    height:50px;
+    float:left;
+    background-color:#add8e6;
+}
+#yw {
+    color:gray;
+    margin-top: 22px;
+    margin-left:2%;
+    height:30%;
+}
+#forget{
+    padding-left:257px;
+}
+#autodenglu{
+    padding-left:30px;
+}

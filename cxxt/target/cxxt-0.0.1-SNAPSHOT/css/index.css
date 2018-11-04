@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    margin: 40px;
+    padding: 20px;
+
+}
+
+#footer{
+    text-align: center;
+    width:100%;
+    height:78px;
+    float:left;
+    background-color:#333333;
+    }
+#mkw {
+    float:left;
+    margin-left:33%;
+    margin-top:18px;
+
+}
+#xt {
+    float:left;
+    margin-left:5%;
+    margin-top:18px;
+}
+#cn {
+    float:left;
+    margin-left:5%;
+    margin-top:18px;
+}
+#tx {
+    float:left;
+    margin-left:5%;
+    margin-top:18px;
+}
+#yw {
+    color:white;
+    margin-top:26px;
+    margin-left:2%;
+    height:30%;
+}
+#username_id{
+	padding-right:20px;
+	height:30px;
+	width:80px;
+	text-align:left;
+	font-size:4px;
+	border:1px solid red;
+}
+.threeleft{
+    width:283px;
+    height:233px;
+    background-color:ghostwhite;
+
+}
+.oneleft{
+    width:412px;
+    height:240px;
+    background-color: ghostwhite;
+
+
+
+}
+.oneright{
+    width:462px;
+    height:240px;
+    background-color: ghostwhite;
+
+}
+
+#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#ten,#eleven,#twelve,#thirteen,#fourteen,#fifteen
+,#sixteen,#seventeen{
+    font-style: normal;
+    font-size: 15px;
+    color:black;
+    font-family: "Adobe 楷体  Std R";
+}
+#l1,#l2,#l3,#l4{
+    width:410px;
+    height:183px;
+
+}
+#r1,#r2,#r3,#r4{
+   width:460px;
+    height:183px;
+}
+#m1,#m2,#m3,#m4,#m5,#m6,#m7,#m8,#m9{
+    width:280px;
+    height:175px;
+}
+#p1,#p2,#p3,#p4{
+    width:100%;height:400px;}
+#login,#register{
+    color:#101010;
+}
+#b1,#b2{
+    height:498px;
+   width:243px;
+}
+#b3{
+    width:243px;
+}
+#b4{
+    height:475px;
+    width:243px;
+
+}
+
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}

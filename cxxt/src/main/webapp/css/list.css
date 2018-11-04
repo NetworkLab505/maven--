@@ -1,0 +1,38 @@
+.panel{
+    background-color:#e0e5ff;
+    border:2px solid lightsteelblue;
+    border-radius: 8px;
+}
+/*表格样式*/
+table thead tr th {
+    text-align:center;
+}
+table{
+    font-size:14px;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    padding:12px ;
+}
+.table-cont{
+    max-height: 400px;
+    overflow: auto;
+    margin: 20px 10px;
+}
+/*搜索*/
+input{
+    margin:-7px;
+}
+.form-control{
+    float:right;
+    font-size:11px;
+    border-radius: 7px;
+    border:1px solid peachpuff;
+}
+#reset{
+    margin-top:5px;
+}
+#save{
+    margin-top:5px;
+    margin-left:20px;
+
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置常量 -->
+	<!-- 字符集 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 主题 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.objectFactory" value="spring"></constant>
+	<package name="cxxt" namespace="/" extends="struts-default">
+    <global-exception-mappings>
+      <exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
+    </global-exception-mappings>
+     <action name="user_zhuce" class="com.melonlink.cxxt.action.UserAction" method="zhuce">
+     <!--  <result name="success">/login.jsp</result> 
+      <result name="error">/regist.jsp</result> -->
+     </action> 
+     <action name="user_SaveUser" class="com.melonlink.cxxt.action.UserAction" method="SaveUser">
+        <result name="toHome" type="redirect">/login.jsp</result>
+        <result name="error">/regist.jsp</result>
+     </action>
+     <action name="user_login" class="com.melonlink.cxxt.action.UserAction" method="login">
+        <result name="success" type="redirect">/index.jsp</result>
+        <result name="error">/login.jsp</result>
+     </action>
+     <action name="user_activate" class="com.melonlink.cxxt.action.UserAction" method="activate">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/activate.jsp</result>
+     </action>
+     <action name="user_updatePaWByemail" class="com.melonlink.cxxt.action.UserAction" method="updatePaWByemail">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/activate.jsp</result>
+     </action>
+     <action name="user_updatePasW" class="com.melonlink.cxxt.action.UserAction" method="updatePasW">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/updatePassword.jsp</result>
+     </action>
+     <action name="user_addUser" class="com.melonlink.cxxt.action.UserAction" method="addUser">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/updatePassword.jsp</result>
+     </action>
+     <action name="user_deleteUser" class="com.melonlink.cxxt.action.UserAction" method="deleteUser">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/updatePassword.jsp</result>
+     </action>
+     <action name="user_updateUser" class="com.melonlink.cxxt.action.UserAction" method="updateUser">
+        <result name="success" type="redirect">/login.jsp</result>
+        <result name="error">/updatePassword.jsp</result>
+     </action>
+     <action name="user_logout" class="com.melonlink.cxxt.action.UserAction" method="logout">
+        <result name="logout" type="redirect">/login.jsp</result>
+        <result name="error">/index.jsp</result>
+     </action>
+   </package>
+     <package name="ajax" namespace="/json" extends="json-default"> 
+     <action name="user_listUser" class="com.melonlink.cxxt.action.UserAction" method="listUser">
+       <result type="json">
+          <param name="root">MapList</param>
+       </result>
+     </action>
+     </package>
+</struts>

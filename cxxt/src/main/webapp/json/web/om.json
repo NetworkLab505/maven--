@@ -1,0 +1,39 @@
+[ {"type_1":"md","type_2":"pr","video":[
+  {"id":"001","src":"#","img_src":"img/html.png","text":"运维初级视频1","para":"适合前端初级人员学习的视频1"},
+  {"id":"002","src":"#","img_src":"img/html.png","text":"运维初级视频2","para":"适合前端初级人员学习的视频1"},
+  {"id":"003","src":"#","img_src":"img/css.png","text":"运维初级视频3","para":"适合前端初级人员学习的视频1"},
+  {"id":"004","src":"#","img_src":"img/html.png","text":"运维初级视频4","para":"适合前端初级人员学习的视频1"},
+  {"id":"005","src":"#","img_src":"img/css.png","text":"运维初级视频5","para":"适合前端初级人员学习的视频1"},
+  {"id":"006","src":"#","img_src":"img/css.png","text":"运维初级视频6","para":"适合前端初级人员学习的视频1"},
+  {"id":"007","src":"#","img_src":"img/css.png","text":"运维初级视频7","para":"适合前端初级人员学习的视频1"},
+  {"id":"008","src":"#","img_src":"img/css.png","text":"运维初级视频8","para":"适合前端初级人员学习的视频1"},
+  {"id":"009","src":"#","img_src":"img/css.png","text":"运维初级视频9","para":"适合前端初级人员学习的视频1"},
+  {"id":"010","src":"#","img_src":"img/css.png","text":"运维初级视频10","para":"适合前端初级人员学习的视频1"},
+  {"id":"011","src":"#","img_src":"img/css.png","text":"运维初级视频11","para":"适合前端初级人员学习的视频1"},
+  {"id":"012","src":"#","img_src":"img/css.png","text":"运维初级视频12","para":"适合前端初级人员学习的视频1"},
+  {"id":"013","src":"#","img_src":"img/css.png","text":"运维初级视频13","para":"适合前端初级人员学习的视频1"},
+  {"id":"014","src":"#","img_src":"img/css.png","text":"运维初级视频14","para":"适合前端初级人员学习的视频1"},
+  {"id":"015","src":"#","img_src":"img/css.png","text":"运维初级视频15","para":"适合前端初级人员学习的视频1"},
+  {"id":"016","src":"#","img_src":"img/css.png","text":"运维初级视频16","para":"适合前端初级人员学习的视频1"}
+
+]
+},
+  {"type_1":"md","type_2":"mid","video":[
+    {"id":"101","src":"#","img_src":"img/html.png","text":"运维中级视频1","para":"适合前端初级人员学习的视频1"},
+    {"id":"102","src":"#","img_src":"img/html.png","text":"运维中级视频2","para":"适合前端初级人员学习的视频1"},
+    {"id":"103","src":"#","img_src":"img/html.png","text":"运维中级视频3","para":"适合前端初级人员学习的视频1"},
+    {"id":"104","src":"#","img_src":"img/html.png","text":"运维中级视频4","para":"适合前端初级人员学习的视频1"},
+    {"id":"105","src":"#","img_src":"img/html.png","text":"运维中级视频5","para":"适合前端初级人员学习的视频1"},
+    {"id":"106","src":"#","img_src":"img/html.png","text":"运维中级视频6","para":"适合前端初级人员学习的视频1"},
+    {"id":"107","src":"#","img_src":"img/html.png","text":"运维中级视频7","para":"适合前端初级人员学习的视频1"},
+    {"id":"108","src":"#","img_src":"img/html.png","text":"运维中级视频8","para":"适合前端初级人员学习的视频1"},
+    {"id":"109","src":"#","img_src":"img/html.png","text":"运维中级视频9","para":"适合前端初级人员学习的视频1"},
+    {"id":"110","src":"#","img_src":"img/html.png","text":"运维中级视频10","para":"适合前端初级人员学习的视频1"},
+    {"id":"111","src":"#","img_src":"img/html.png","text":"运维中级视频11","para":"适合前端初级人员学习的视频1"},
+    {"id":"112","src":"#","img_src":"img/html.png","text":"运维中级视频12","para":"适合前端初级人员学习的视频1"},
+    {"id":"113","src":"#","img_src":"img/html.png","text":"运维中级视频13","para":"适合前端初级人员学习的视频1"},
+    {"id":"114","src":"#","img_src":"img/html.png","text":"运维中级视频14","para":"适合前端初级人员学习的视频1"},
+    {"id":"115","src":"#","img_src":"img/html.png","text":"运维中级视频15","para":"适合前端初级人员学习的视频1"},
+    {"id":"116","src":"#","img_src":"img/html.png","text":"运维中级视频16","para":"适合前端初级人员学习的视频1"}
+  ]}
+]

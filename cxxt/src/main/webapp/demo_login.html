@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyUI-登录</title>
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script>
+        var login_id;
+        $(function () {
+        login_id=$("#login_id").dialog({
+                closable:false,
+                modal:true,
+                buttons:[{text:'登录',handler:function () {
+                    /*使用Jquery的ajax从后台获取用户名和密码*/
+                       $.ajax({
+                           url:'',
+                           data:{
+                               name:$('#loginInput input[username=username]').val(),
+                              password:$('#loginInput input[password=password]').val()
+                           },
+                           cache:false,
+                           dataType:'json',
+                           success:function (r) {
+                               //console.info(r.msg);
+                               if(r&& r.success){
+                                   loginAndRegDialog.dialog('close');
+                                   $.messager.show({
+                                       title:'提示',
+                                       msg:r.msg
+                                   });
+                               }else{
+                                   $.messager.alert('标题',r.msg);
+                               }
+                           }
+                       })
+                        
+                    }},{text:'注册',handler:function () {
+
+
+
+
+
+                    }}],
+        });
+        //增加回车提交功能
+            $("#loginInput").find('input').on('keyup',function () {
+                if(event.keyCode==13)
+                {loginInput.submit();}
+            });
+        });
+    </script>
+    <style>
+        #login_id{
+            width: 250px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="login_id" title="登录" >
+    <form id="loginInput" method="post">
+        <table>
+            <tr>
+                <th align="right">用户名</th><td><input name="username"></td>
+            </tr>
+            <tr>
+                <th align="left">密码</th><td><input type="password" name="password"/> </td>
+            </tr>
+        </table>
+    </form>
+</div>-->
+</body>
+</html>

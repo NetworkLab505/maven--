@@ -1,0 +1,16 @@
+$('#aa').load('classlist.html');
+$('#click1').click(function(){
+    $('#aa').load('classlist.html');
+});
+$('#click2').click(function(){
+    $('#aa').load('classlist.html');
+});
+$('#click3').click(function(){
+    $('#aa').load('imglist.html');
+});
+$('#click4').click(function(){
+    $('#aa').load('videolist.html');
+});
+$('#click5').click(function(){
+    $('#aa').load('userlist.html');
+});

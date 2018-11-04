@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片管理</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script src="js/editimg.js"></script>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="http://www.runoob.com/try/demo_source/jqueryui/style.css">
+    <script type="text/javascript" src="js/addclass.js"></script>
+    <script src="js/submitimg.js"></script>
+</head>
+<body>
+<div style="padding:20px;" id="app">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title form-inline">
+                图片管理
+                <span>/</span>
+                <span type="button"  onclick="$('#addimages').window('open')" style="background-color: #337AB7;cursor: pointer">添加图片</span>
+                <input type="text" name="key" value="" class="form-control" id="key" onkeydown="onSearch(this)" placeholder="按学习方向search">
+            </h3>
+        </div>
+        <div class='table-cont' id="table-cont">
+            <table class="table table-bordered table-striped text-center" id='table'>
+                <thead>
+                <tr >
+                    <th>ID</th>
+                    <th>学习方向</th>
+                    <th>等级</th>
+                    <th>图片名称</th>
+                    <th>图片</th>
+                    <th>图片介绍</th>
+                    <th colspan="2">操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="easyui-pagination" fit="true" border="true" data-options="total:100" style="margin-top: -10px"></div>
+    </div>
+</div>
+<!--编辑表单-->
+<div id="w"  class="easyui-window" title="编辑" modal="true"  closed="true" data-options="iconCls:'icon-edit'" style="width:400px;">
+    <form>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Id</th>
+                <td><input type="text" name="" class="form-control" id="Id" /></td>
+            </tr>
+            <tr>
+                <th>学习方向</th>
+                <td><input type="text" name="" class="form-control" id="Learning_direction" /></td>
+            </tr>
+            <tr>
+                <th>等级</th>
+                <td><input type="text" name="" class="form-control" id="Grade" /></td>
+            </tr>
+            <tr>
+                <th>图片名称</th>
+                <td><input type="text" name="" class="form-control" id="Image_Name" /></td>
+            </tr>
+            <tr>
+                <th>图片</th>
+                <td><input type="text" name="" class="form-control" id="Image" /></td>
+            </tr>
+            <tr>
+                <th>图片介绍</th>
+                <td><input type="text" name="" class="form-control" id="Picture_Introduction" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="reset" value="取消" class="btn btn-primary" id="reset" onclick="$('#w').window('close')" />
+                    <input type="button" value="保存" class="btn btn-info" id="save"  onclick="$('#w').window('close');update()" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    //将数据以表格形式显示
+    $(function(){
+        $.getJSON('./json/imglist.json',function(response, status, xhr) {
+            var table = document.getElementById("table");
+            for(var i=0;i<response.length;i++) {
+                var row = table.insertRow(table.rows.length);
+                var c1 = row.insertCell(0);
+                c1.innerHTML = response[i].Id;
+                var c2 = row.insertCell(1);
+                c2.innerHTML = response[i].Learning_direction;
+                var c3 = row.insertCell(2);
+                c3.innerHTML = response[i].Grade;
+                var c4 = row.insertCell(3);
+                c4.innerHTML = response[i].Image_Name;
+                var c5 = row.insertCell(4);
+                c5.innerHTML = response[i].Image;
+                var c6 = row.insertCell(5);
+                c6.innerHTML = response[i].Picture_Introduction;
+                var c7 = row.insertCell(6);
+                c7.innerHTML = '<button class="btn btn-link" onclick="del(this)">删除</button>';
+                var c8 = row.insertCell(7);
+                c8.innerHTML = '<button class="btn btn-link" onclick="$(\'#w\').window(\'open\'); modify(this) ">编辑</button>';
+            }
+        })
+    });
+</script>
+<!--上传图片-->
+<div id="addimages"  class="easyui-window" title="添加" modal="true"  closed="true" data-options="iconCls:'icon-edit'" style="width:400px;">
+    <div id="addImg_div">
+        <form  id="addClass"  onsubmit="return submitimg()">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <td><input type="text"  class="form-control" name="classID" id="classID" required="required" /></td>
+                </tr>
+                <tr>
+                    <th>学习方向</th>
+                    <td>
+                        <select id="direction" name="direction">
+                            <option name="direction" >网络前端</option>
+                            <option name="direction" >网络后端</option>
+                            <option name="direction" >嵌入式</option>
+                            <option name="direction" >电源</option>
+                            <option name="direction" >工控</option>
+                            <option name="direction" >移动 </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>等级</th>
+                    <td>
+                        <select id="grade1" name="grade1">
+                            <option name="grade">初级</option>
+                            <option name="grade">中级</option>
+                            <option name="grade">高级</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>图片名称</th>
+                    <td><input type="text"  class="form-control" name="imgname" id="imgname" /></td>
+                </tr>
+                <tr>
+                    <th>图片介绍</th>
+                    <td><input type="text"  class="form-control" name="introduce" id="introduce" /></td>
+                </tr>
+                <tr>
+                    <th>插入图片</th>
+                    <td><input type="file" name="img" class="insertImg" id="insertImg" /></td>
+                </tr>
+            </table>
+            <button id="opener"  style="margin-left: 278px; background-color: #00a0e9" onclick="$('#addimages').window('close');Upload()">上传图片</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
