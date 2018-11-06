@@ -38,7 +38,11 @@ public class UserServiceImpl implements UserService {
 			m=p.matcher(user.getMail());
 			if(m.matches()==true) {	
 				user.setEnabled(0);	
-	        EmailUtils.sendAccountActivateEmail(user.getUsername(),user.getPassword(),user.getMail());
+	        String IEmail=EmailUtils.sendAccountActivateEmail(user.getUsername(),user.getPassword(),user.getMail());
+	        if(IEmail!="success")
+	        	throw new RuntimeException("邮箱发送失败!");
+	        else
+	        	System.out.println("邮箱发送成功");
 			}else 
 				throw new RuntimeException("邮箱错误!");
 			String veri = null;

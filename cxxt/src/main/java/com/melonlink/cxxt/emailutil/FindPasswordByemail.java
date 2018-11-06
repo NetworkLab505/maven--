@@ -11,7 +11,7 @@ import javax.mail.Message.RecipientType;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 public class FindPasswordByemail {
-	private static final String FROM="innovativelab@qq.com";
+	private static final String FROM="18893092219@163.com";
 	public static void sendFindPasswordEmail(String email){
 		Session session=getSession();
 		MimeMessage message=new MimeMessage(session);
@@ -38,7 +38,7 @@ public class FindPasswordByemail {
 		Session session = Session.getInstance(props, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(FROM, "pqlcorjbldtmheca");
+				return new PasswordAuthentication(FROM, "1148557850foreve");
 			}
 		});
 		return session;

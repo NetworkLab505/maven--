@@ -9,8 +9,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 public class EmailUtils {
-	private static final String FROM="innovativelab@qq.com";
-	public static void sendAccountActivateEmail(String username,String password,String email) {
+	private static final String FROM="18893092219@163.com";
+	public static String sendAccountActivateEmail(String username,String password,String email) {
 		Session session=getSession();
 		MimeMessage message=new MimeMessage(session);
 		try {
@@ -19,17 +19,18 @@ public class EmailUtils {
 			message.setFrom(new InternetAddress(FROM));
 			message.setRecipient(RecipientType.TO, new InternetAddress(email));
 			System.out.println(email+username);
-		    message.setContent("<a target='_BLANK' href='http://132.232.5.13:8082/cxxt/activate.jsp?username="+username+"&password="+password+"'target='_blank'>点击激活</a>","text/html;charset=utf-8");
+		    message.setContent("<a target='_BLANK' href='http://127.0.0.1:8888/cxxt/activate.jsp?username="+username+"&password="+password+"'target='_blank'>点击激活</a>","text/html;charset=utf-8");
 			Transport.send(message);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "success";
 	}
 	public static Session getSession() {
 		Properties props=new Properties();
 		props.setProperty("mail.transport.protocol","smtp");
-		props.setProperty("mail.smtp.host","smtp.qq.com");
+		props.setProperty("mail.smtp.host","smtp.163.com");
 		props.setProperty("mail.smtp.port", "465");
 		props.setProperty("mail.smtp.socketFactory.class",
                  "javax.net.ssl.SSLSocketFactory");
@@ -37,7 +38,7 @@ public class EmailUtils {
 		Session session = Session.getInstance(props, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(FROM, "pqlcorjbldtmheca");
+				return new PasswordAuthentication(FROM, "1148557850foreve");
 			}
 		});
 		return session;
