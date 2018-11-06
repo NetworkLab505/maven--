@@ -3,7 +3,6 @@ com\melonlink\cxxt\service\UserService.class
 com\melonlink\cxxt\dao\impl\UserDaoImpl$3.class
 com\melonlink\cxxt\telephoneutil\singlesend.class
 com\melonlink\cxxt\telephoneutil\StringRandom.class
-com\melonlink\cxxt\emailutil\EmailUtils$1.class
 com\melonlink\cxxt\entity\User.class
 com\melonlink\cxxt\emailutil\FindPasswordByemail.class
 com\melonlink\cxxt\dao\UserDao.class
@@ -11,12 +10,10 @@ com\melonlink\cxxt\GETutil\pageShow.class
 com\melonlink\cxxt\emailutil\FindPasswordByemail$1.class
 com\melonlink\cxxt\entity\Chapter.class
 com\melonlink\cxxt\entity\VideoImg.class
-com\melonlink\cxxt\service\impl\UserServiceImpl.class
 com\melonlink\cxxt\entity\CourseImg.class
 com\melonlink\cxxt\action\UserAction.class
 com\melonlink\cxxt\dao\impl\UserDaoImpl$2.class
 com\melonlink\cxxt\dao\impl\UserDaoImpl.class
 com\melonlink\cxxt\dao\impl\UserDaoImpl$1.class
-com\melonlink\cxxt\emailutil\EmailUtils.class
 com\melonlink\cxxt\GETutil\GetIP.class
 com\melonlink\cxxt\entity\CourseVideo.class

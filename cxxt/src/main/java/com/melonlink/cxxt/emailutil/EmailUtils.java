@@ -19,7 +19,7 @@ public class EmailUtils {
 			message.setFrom(new InternetAddress(FROM));
 			message.setRecipient(RecipientType.TO, new InternetAddress(email));
 			System.out.println(email+username);
-		    message.setContent("<a target='_BLANK' href='http://127.0.0.1:8888/cxxt/activate.jsp?username="+username+"&password="+password+"'target='_blank'>点击激活</a>","text/html;charset=utf-8");
+		    message.setContent("<a target='_BLANK' href='http://132.232.5.13:8082/cxxt/activate.jsp?username="+username+"&password="+password+"'target='_blank'>点击激活</a>","text/html;charset=utf-8");
 			Transport.send(message);
 
 		} catch (Exception e) {
@@ -32,8 +32,9 @@ public class EmailUtils {
 		props.setProperty("mail.transport.protocol","smtp");
 		props.setProperty("mail.smtp.host","smtp.163.com");
 		props.setProperty("mail.smtp.port", "465");
-		props.setProperty("mail.smtp.socketFactory.class",
-                 "javax.net.ssl.SSLSocketFactory");
+//		props.setProperty("mail.smtp.socketFactory.class",
+//                 "javax.net.ssl.SSLSocketFactory");
+		props.put("mail.smtp.ssl.enable", "true");  // 开启ssl
 		props.setProperty("mail.smtp.auth","true");
 		Session session = Session.getInstance(props, new Authenticator() {
 			@Override

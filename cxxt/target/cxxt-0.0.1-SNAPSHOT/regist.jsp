@@ -44,7 +44,7 @@ String path = request.getContextPath();
 				           "password":password,
 				           "mail":mail,
 				           "telephone":telephone
-				       };
+				 };
 				$.ajax({
 					type:"post",
 		            async:true,
